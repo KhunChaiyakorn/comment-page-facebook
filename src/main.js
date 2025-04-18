@@ -1,9 +1,10 @@
 import puppeteer, { Page } from 'puppeteer';
-import 'dotenv/config'
+import { config } from 'dotenv';
 import {random_number, wait} from './function.js';
 import fs from 'fs';
 import moment from 'moment-timezone';
-// let time = moment().tz("Asia/Bangkok").format('MMMM Do YYYY, h:mm:ss a');
+config({path: '../.env'})
+
 
 const browser = await puppeteer.launch({
     headless: false,
