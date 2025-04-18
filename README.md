@@ -66,3 +66,15 @@ You can now add your cookies from the puppeteer. They may be different and long,
   },
 ]
 ```
+
+### How to Run
+This is how to use the script
+
+```bash
+cd src
+```
+```bash
+node main.js
+```
+
+
