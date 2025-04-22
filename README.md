@@ -71,10 +71,7 @@ You can now add your cookies from the puppeteer. They may be different and long,
 This is how to use the script
 
 ```bash
-cd src
-```
-```bash
-node main.js
+npm start
 ```
 
 
