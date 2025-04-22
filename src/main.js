@@ -3,16 +3,16 @@ import { config } from 'dotenv';
 import {random_number, wait} from './function.js';
 import fs from 'fs';
 import moment from 'moment-timezone';
-config({path: '../.env'})
+config()
 
 
 const browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     defaultViewport: null,
 });
 
 const page = await browser.newPage();
-console.clear()
+//console.clear()
 
 
 async function run() {
@@ -21,7 +21,7 @@ async function run() {
         let post_1 = []
         let post_2 = []
         
-        const read_cookies = fs.readFileSync('../cookies.json', 'utf-8')
+        const read_cookies = fs.readFileSync('cookies.json', 'utf-8')
         const cookies =  JSON.parse(read_cookies)
         await browser.setCookie(...cookies) // set cookies to browser
         await console.log(`[${moment().tz("Asia/Bangkok").format('MMMM Do YYYY, h:mm:ss a')}] use Cookies`)
@@ -38,7 +38,7 @@ async function run() {
             await page.click('button[type="submit"]')
         }else {
             const get_cookies = await browser.cookies()
-            fs.writeFileSync('../cookies.json', JSON.stringify(get_cookies, null, 2)); // save cookies to file
+            fs.writeFileSync('cookies.json', JSON.stringify(get_cookies, null, 2)); // save cookies to file
             console.log(`[${moment().tz("Asia/Bangkok").format('MMMM Do YYYY, h:mm:ss a')}] cookies saved`)
             //console.log(get_cookies)
         }

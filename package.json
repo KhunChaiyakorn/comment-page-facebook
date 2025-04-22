@@ -4,5 +4,9 @@
     "dotenv": "^16.5.0",
     "moment-timezone": "^0.5.48",
     "puppeteer": "^24.6.1"
+  },
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/test.js"
   }
 }
